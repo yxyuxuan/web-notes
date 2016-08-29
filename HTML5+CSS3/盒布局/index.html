@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>float属性布局</title>
+    <style type="text/css">
+        #centerbody{
+            width: 1000px;
+            margin: 0 auto;
+            display: -webkit-box;
+        }
+        div#left{
+           /* float:left;*/
+            width: 300px;
+            padding: 10px;
+            background-color: green;
+        }
+        div#right{
+            /*float: right;*/
+            width: 300px;
+            padding: 10px;
+            background-color: darkolivegreen;
+        }
+        div#center{
+            /*float: left;*/
+            width: 400px;
+            background-color: deepskyblue;
+        }
+        div#left,div#right,div#center{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<div id="centerbody">
+    <div id="left">
+        <h2>栏目列表</h2>
+        <ul>
+            <li><a href="index.html">栏目名称</a></li>
+            <li><a href="index.html">栏目名称</a></li>
+            <li><a href="index.html">栏目名称</a></li>
+            <li><a href="index.html">栏目名称</a></li>
+            <li><a href="index.html">栏目名称</a></li>
+            <li><a href="index.html">栏目名称</a></li>
+            <li><a href="index.html">栏目名称</a></li>
+        </ul>
+    </div>
+    <div id="center">
+        <p>在CSS3之中我们除了可以使用transition实现动画效果之外呢，我们还可以使用Animations来实现动画效果。
+            1、使用transition和Animations的区别：
+             transition和Animations的区别在于，transition只能通过指定属性的开始值与结束值，然后通过两属性值之间进行平滑过渡的方式来实现动画效果，所以transition不能实现复杂的动画效果，而Animations功能是是通过关键帧以及每个关键帧中的属性值来实现更为复杂的动画效果。
+            2、Animations的使用方法：
+            @-webkit-keyframes 关键帧合集名称{创建关键帧的代码}</p>
+    </div>
+    <div id="right">
+        <h2>推荐文章</h2>
+        <ul>
+            <li><a href="index.html">推荐文章</a></li>
+            <li><a href="index.html">推荐文章</a></li>
+            <li><a href="index.html">推荐文章</a></li>
+            <li><a href="index.html">推荐文章</a></li>
+            <li><a href="index.html">推荐文章</a></li>
+            <li><a href="index.html">推荐文章</a></li>
+            <li><a href="index.html">推荐文章</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        .wrap {
+            width: 650px;
+            height: 250px;
+            margin: 100px auto 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wrap img {
+            display: block;
+        }
+
+        .wrap ul {
+            height: 250px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .wrap ol {
+            height: 30px;
+            z-index: 2;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .wrap > ul > li {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .wrap > ol > li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            border: 1px solid white;
+            margin-right: 5px;
+            background: Gray;
+        }
+
+        .wrap > ol > li:hover {
+            cursor: pointer;
+        }
+
+        .wrap li.active {
+            padding: 2px;
+            color: orange;
+            margin-top: -4px;
+            border: 1px solid orange;
+        }
+    </style>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var zIndex = 0;
+            $(".wrap > ol > li").mouseenter(function () {
+                zIndex++;
+                $(this).addClass("active").siblings().removeClass("active");
+                $(".wrap > ul > li")
+                        .eq($(this).index())
+                        .css({
+                            "z-index": zIndex,
+                            "left": 650
+                        })
+                        .animate({
+                            "left": 0
+                        }, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li style="z-index:1;"><img src="images/01.jpg" alt=""/></li>
+        <li><img src="images/02.jpg" alt=""/></li>
+        <li><img src="images/03.jpg" alt=""/></li>
+        <li><img src="images/04.jpg" alt=""/></li>
+        <li><img src="images/05.jpg" alt=""/></li>
+    </ul>
+    <ol>
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>
+</div>
+</body>
+</html>
